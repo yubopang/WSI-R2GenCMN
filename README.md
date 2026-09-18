@@ -163,26 +163,6 @@ Generated reports are written to:
 <save_dir>/reports/<slide_id>.txt
 ```
 
-## Common Arguments
-
-| Argument | Default | Description |
-| --- | --- | --- |
-| `--image_dir` | `.../pt_files` | Directory containing WSI patch feature `.pt` files |
-| `--ann_path` | `.../TCGA_BRCA` | Directory containing case-level annotation folders |
-| `--split_path` | `../ocr/dataset_csv/splits_0.csv` | CSV file with `train`, `val`, and `test` columns |
-| `--dataset_name` | `tcga_organ` | Dataset mode; supported values are `TCGA` and `tcga_organ` |
-| `--max_fea_length` | `10000` | Maximum number of patch features per WSI |
-| `--max_seq_length` | `600` | Maximum report token sequence length |
-| `--threshold` | `3` | Minimum word frequency for vocabulary inclusion |
-| `--d_model` | `512` | Transformer hidden dimension |
-| `--d_vf` | `1024` | Input visual feature dimension |
-| `--num_layers` | `3` | Number of Transformer layers |
-| `--topk` | `32` | Top-k setting for cross-modal memory |
-| `--cmm_size` | `2048` | Cross-modal memory size |
-| `--beam_size` | `3` | Beam size for report generation |
-| `--monitor_metric` | `BLEU_4` | Validation metric used for best-checkpoint selection |
-| `--amp` | `False` | Enable CUDA automatic mixed precision when set to `True` |
-
 ## OCR Utility
 
 `ocr/pdf2text.py` can be used to find TCGA PDF reports and diagnostic `.svs` files, convert PDF pages to images, and run OCR with Tesseract.
@@ -198,7 +178,3 @@ python ocr/pdf2text.py \
 
 This script is a data-preparation helper. The training pipeline itself expects cleaned `annotation` files and pre-extracted `.pt` WSI features.
 
-
-## License
-
-This project is distributed under the license in `LICENSE`.
