@@ -198,13 +198,6 @@ python ocr/pdf2text.py \
 
 This script is a data-preparation helper. The training pipeline itself expects cleaned `annotation` files and pre-extracted `.pt` WSI features.
 
-## Current Limitations and Notes
-
-- The active `main.py` path assumes CUDA and NCCL. CPU-only execution would require code changes.
-- The distributed dataloader is always initialized, including validation and testing.
-- The current `collate_fn` effectively returns one WSI tensor per batch, so the tested configuration is `--batch_size 1`.
-- Image transforms in `modules/dataloaders.py` are legacy from image-based R2Gen code and are not applied to the loaded `.pt` feature tensors.
-- `modules/visual_extractor.py` and `models/r2gen.py` are retained for image-input R2Gen-style usage, while `models/r2gencmn.py` is the active model used by `main.py`.
 
 ## License
 
