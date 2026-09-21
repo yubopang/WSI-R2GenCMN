@@ -165,16 +165,5 @@ Generated reports are written to:
 
 ## OCR Utility
 
-`ocr/pdf2text.py` can be used to find TCGA PDF reports and diagnostic `.svs` files, convert PDF pages to images, and run OCR with Tesseract.
-
-Example:
-
-```bash
-python ocr/pdf2text.py \
-  --type TCGA_BRCA \
-  --root /path/to/GDC_DATA \
-  --savepath /path/to/output/datasets
-```
-
-This script is a data-preparation helper. The training pipeline itself expects cleaned `annotation` files and pre-extracted `.pt` WSI features.
+`ocr/pdf2text.py` can be used to find TCGA PDF reports and diagnostic `.svs` files, convert PDF pages to images, and run OCR with Tesseract. This script is a data-preparation helper. The training pipeline itself expects cleaned `annotation` files and pre-extracted `.pt` WSI features.
 
