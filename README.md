@@ -126,14 +126,6 @@ python main.py \
   --epochs 60
 ```
 
-Important behavior:
-
-- `--n_gpu` is assigned to `CUDA_VISIBLE_DEVICES`.
-- The script uses `torch.multiprocessing.spawn` with one worker per visible GPU.
-- The learning rate `--lr_ed` is multiplied by the detected world size.
-- Checkpoints are written to `--save_dir`.
-- `model_best.pth` is saved when the monitored validation metric improves.
-- Final best validation/test records are appended to `record_dir/<dataset_name>.csv`.
 
 ## Testing
 
@@ -151,17 +143,6 @@ python main.py \
   --dataset_name tcga_organ
 ```
 
-The test mode loads:
-
-```text
-<checkpoint_dir>/model_best.pth
-```
-
-Generated reports are written to:
-
-```text
-<save_dir>/reports/<slide_id>.txt
-```
 
 ## OCR Utility
 
