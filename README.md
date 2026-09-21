@@ -95,19 +95,6 @@ train,val,test
 TCGA-G8-6909-01Z-00-DX1...,TCGA-B6-A0IH-01Z-00-DX1...,TCGA-LD-A74U-01Z-00-DX1...
 ```
 
-The dataset maps each slide name to a TCGA case ID using the first three dash-separated fields, for example:
-
-```text
-TCGA-G8-6909-01Z-00-DX1... -> TCGA-G8-6909
-```
-
-It then looks for:
-
-```text
-ann_path/TCGA-G8-6909/annotation
-image_dir/TCGA-G8-6909-01Z-00-DX1....pt
-```
-
 ## Training
 
 Example single-node training command:
